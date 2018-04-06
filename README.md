@@ -13,9 +13,9 @@ A basic pizza ordering app that accepts user input and allows them to choose fla
 | :-------------     | :------------- | :------------- |
 | **Program accepts user input for size** | User input: "large" | Output: "large"|
 | **Program accepts user input for one topping into an array** | User input: "pepperoni" | Output: "[pepperoni]"|
-| **Program outputs selections of size and toppings in a message to user**| User input: "large, pepperoni and sausage" | Output: "Thank you for your order of a large pepperoni and sausage pizza!"|
-| **Program assigns dollar value to each property of the pizza."| User Input: "large, pepperoni" | Output: "large = $15, pepperoni = $1"|
-| **Program totals dollar value for pizza and outputs as cost"| User Input: "large, pepperoni" | Output: "Pizza cost: $16"|
+| **Program assigns dollar value to each property of the pizza.| User Input: "large, pepperoni" | Output: "large = $16, pepperoni = $1.5"|
+| **Program totals dollar value for pizza and outputs as cost.| User Input: "large, pepperoni" | Output: "$17.50"|
+| **Program prints inputted user name and cost of the pizza into an output sentence.| User Input: "Isaac, large, pepperoni" | Output: "Isaac, your pizza costs $14.50. Come back soon!"|
 | **Program accepts user input for multiple toppings** | User input: "cheese, pepperoni" | Output: "[cheese, pepperoni]"|
 
 
