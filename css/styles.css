@@ -13,3 +13,7 @@
 #output {
   display: none;
 }
+
+.form-control {
+  width: 400px
+}
