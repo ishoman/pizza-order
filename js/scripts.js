@@ -6,10 +6,20 @@ function Pizza(name, size, topping) {
   this.cost = 0;
 }
 
+Pizza.prototype.pizzaCost = function () {
+  var cos = 0;
+
+};
+
 // User Interface Logic
 $(function() {
   $("#pizza").submit(function(event){
     event.preventDefault();
-    alert("it works")
+    var inputtedName = $("#name").val();
+    var inputtedSize = $("#size").val();
+    var inputtedTopping = $("#topping").val();
+    var pizza = new Pizza(inputtedName, inputtedSize, inputtedTopping);
+    var pizzaCost = pizza.pizzaCost();
+    $
   });
 });
