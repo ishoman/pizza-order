@@ -11,15 +11,14 @@ Pizza.prototype.pizzaSizeCost = function () {
     alert("Please select Size");
   } else if (this.size === "Small") {
     this.cost += 10;
-  } else if (pizza.size === "Medium") {
+  } else if (this.size === "Medium") {
     this.cost += 13;
-  } else if (pizza.size === "Large") {
+  } else if (this.size === "Large") {
     this.cost += 16;
   }
 };
 
 Pizza.prototype.pizzaToppingCost = function () {
-  debugger;
   for (index = 0; index < this.topping.length; index ++) {
     this.cost = this.cost + 1.5;
   }
