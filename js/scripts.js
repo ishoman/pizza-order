@@ -35,7 +35,9 @@ $(function() {
     pizza.pizzaSizeCost();
     pizza.pizzaToppingCost();
     var pizzaCost = pizza.cost;
-    console.log(pizzaCost, "This is pizza cost");
+    $("span#cost").text("$" + pizzaCost);
+    $("span#nameOutput").text(inputtedName + ", ")
+    $("#output").show();
 
   });
 });
