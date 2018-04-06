@@ -6,9 +6,17 @@ function Pizza(name, size, topping) {
   this.cost = 0;
 }
 
-Pizza.prototype.pizzaCost = function () {
-  var cost = 0;
-
+Pizza.prototype.pizzaSizeCost = function () {
+  if(this.size !== "Small" && this.size !== "Medium" && this.size !== "Large") {
+    alert("Please select Size");
+  } else if (this.size === "Small") {
+    this.cost += 10;
+  } else if (pizza.size === "Medium") {
+    this.cost += 13;
+  } else if (pizza.size === "Large") {
+    this.cost += 16;
+  }
+  // console.log(cost);
 };
 
 // User Interface Logic
@@ -19,12 +27,8 @@ $(function() {
     var inputtedSize = $("#size").val();
     var inputtedTopping = $("#topping").val();
     var pizza = new Pizza(inputtedName, inputtedSize, inputtedTopping);
-    var pizzaCost = pizza.pizzaCost();
-    console.log(inputtedName);
-    console.log(inputtedSize);
-    console.log(inputtedTopping);
-    console.log(pizza);
-    console.log(pizza.topping);
-    $
+    pizza.pizzaSizeCost();
+    var pizzaCost = pizza.cost;
+  
   });
 });
