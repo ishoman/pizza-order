@@ -38,6 +38,19 @@ $(function() {
     $("span#cost").text("$" + pizzaCost + "0");
     $("span#nameOutput").text(inputtedName + ", ")
     $("#output").show();
+  });
 
+  $("#moreToppings").click(function(){
+    $("#add").show();
+    $(".new-topping").append('<div class="new-topping">' +
+                                  '<label for="pizzaSize">Select Pizza Topping:</label>' +
+                                  '<select class="form-control">' +
+                                    '<option></option>' +
+                                    '<option>Pepperoni</option>' +
+                                    '<option>Sausage</option>' +
+                                    '<option>Pineapple</option>' +
+                                    '<option>Canadian Bacon</option>' +
+                                  '</select'> +
+                                  '</div>');
   });
 });
