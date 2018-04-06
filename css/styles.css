@@ -1,3 +1,11 @@
+#pizzaToppings button {
+  margin-top: 10px;
+}
+
+#add {
+  display: none;
+}
+
 #submit {
   margin-top: 10px;
 }
