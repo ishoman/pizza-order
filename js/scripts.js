@@ -16,7 +16,13 @@ Pizza.prototype.pizzaSizeCost = function () {
   } else if (pizza.size === "Large") {
     this.cost += 16;
   }
-  // console.log(cost);
+};
+
+Pizza.prototype.pizzaToppingCost = function () {
+  debugger;
+  for (index = 0; index < this.topping.length; index ++) {
+    this.cost = this.cost + 1.5;
+  }
 };
 
 // User Interface Logic
@@ -28,7 +34,9 @@ $(function() {
     var inputtedTopping = $("#topping").val();
     var pizza = new Pizza(inputtedName, inputtedSize, inputtedTopping);
     pizza.pizzaSizeCost();
+    pizza.pizzaToppingCost();
     var pizzaCost = pizza.cost;
-  
+    console.log(pizzaCost, "This is pizza cost");
+
   });
 });
