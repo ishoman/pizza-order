@@ -2,8 +2,12 @@
 function Pizza(name, size, topping) {
   this.name = name;
   this.size = size;
-  this.topping = [topping];
+  this.toppings = [topping];
   this.cost = 0;
+}
+
+function Topping(topping) {
+  this.topping = topping;
 }
 
 Pizza.prototype.pizzaSizeCost = function () {
@@ -19,8 +23,8 @@ Pizza.prototype.pizzaSizeCost = function () {
 };
 
 Pizza.prototype.pizzaToppingCost = function () {
-  for (index = 0; index < this.topping.length; index ++) {
-    this.cost = this.cost + 1.5;
+  for (index = 0; index < this.toppings.length; index ++) {
+    this.cost = this.cost + 2;
   }
 };
 
@@ -30,27 +34,42 @@ $(function() {
     event.preventDefault();
     var inputtedName = $("#name").val();
     var inputtedSize = $("#size").val();
-    var inputtedTopping = $("#topping").val();
+    var inputtedTopping= $("#topping").val();
     var pizza = new Pizza(inputtedName, inputtedSize, inputtedTopping);
+    console.log(pizza);
+
+    $("#topping").each(function() {
+     var secondTopping = $(this).find("#topping").val();
+     console.log(secondTopping);
+     var newTopping = new Topping(secondTopping);
+     pizza.toppings.push(topping);
+   });
+
     pizza.pizzaSizeCost();
     pizza.pizzaToppingCost();
     var pizzaCost = pizza.cost;
-    $("span#cost").text("$" + pizzaCost + "0");
+    console.log(pizza);
+    $("span#cost").text("$" + pizzaCost);
     $("span#nameOutput").text(inputtedName + ", ")
     $("#output").show();
+    $(".clearFields").hide();
+    resetFields();
   });
 
   $("#moreToppings").click(function(){
-    $("#add").show();
-    $(".new-topping").append('<div class="new-topping">' +
-                                  '<label for="pizzaSize">Select Pizza Topping:</label>' +
-                                  '<select class="form-control">' +
-                                    '<option></option>' +
-                                    '<option>Pepperoni</option>' +
-                                    '<option>Sausage</option>' +
-                                    '<option>Pineapple</option>' +
-                                    '<option>Canadian Bacon</option>' +
-                                  '</select'> +
-                                  '</div>');
+    $("#pizzaToppings").append('<div id="topping">' +
+                                '<div class="clearFields">' +
+                                  '<div class="form-group">' +
+                                    '<label for="pizzaSize">Select Pizza Topping:</label>' +
+                                    '<input id="name" class="form-control" type="text" placeholder="Enter Topping">' +
+                                  '</div>' +
+                                '</dive>' +
+                              '</div>');
   });
+
+  function resetFields() {
+    $("#name").val("");
+    $("#size").val("");
+    $("#topping").val("");
+  };
 });
