@@ -48,7 +48,6 @@ $(function() {
     pizza.pizzaSizeCost();
     pizza.pizzaToppingCost();
     var pizzaCost = pizza.cost;
-    console.log(pizza);
     $("span#cost").text("$" + pizzaCost);
     $("span#nameOutput").text(inputtedName + ", ")
     $("#output").show();
