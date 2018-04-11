@@ -34,10 +34,15 @@ Pizza.prototype.pizzaSizeCost = function () {
 $(function() {
   $("#pizza").submit(function(event){
     event.preventDefault();
+    debugger;
     var inputtedName = $("#name").val();
     var inputtedSize = $("#size").val();
-    var inputtedTopping= $("#topping").val();
-    var pizza = new Pizza(inputtedName, inputtedSize, inputtedTopping);
+    var inputtedToppings = [];
+    $("input:checkbox[name=topping]:checked").each(function(){
+      var topping = $(this).val();
+      inputtedToppings.push(topping);
+    })
+    var pizza = new Pizza(inputtedName, inputtedSize, inputtedToppings);
     console.log(pizza);
 
   //   $("#topping").each(function() {
