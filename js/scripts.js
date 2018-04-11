@@ -2,7 +2,7 @@
 function Pizza(name, size, topping) {
   this.name = name;
   this.size = size;
-  this.toppings = [topping];
+  this.toppings = topping;
   this.cost = 0;
 }
 
@@ -11,7 +11,6 @@ function Pizza(name, size, topping) {
 // }
 
 Pizza.prototype.pizzaSizeCost = function () {
-  debugger;
   if(this.size !== "Small" && this.size !== "Medium" && this.size !== "Large") {
     alert("Please select Size");
   } else if (this.size === "Small") {
@@ -34,7 +33,6 @@ Pizza.prototype.pizzaSizeCost = function () {
 $(function() {
   $("#pizza").submit(function(event){
     event.preventDefault();
-    debugger;
     var inputtedName = $("#name").val();
     var inputtedSize = $("#size").val();
     var inputtedToppings = [];
