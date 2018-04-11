@@ -26,7 +26,7 @@ A basic pizza ordering app that accepts user input and allows them to choose fla
 3. To edit code, open in a text editor.
 
 ## Known Bugs
-* Program does not assign value for additional toppings. Price is still accurate for two toppings, but index[1] of the toppings array is undefined, and any more than two toppings does not output an accurate price.
+* No known bugs
 
 ## Technologies Used
 * JS
